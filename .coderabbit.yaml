@@ -1,0 +1,30 @@
+# CodeRabbit configuration for Mini-Project-coastal
+# Docs: https://docs.coderabbit.ai/configuration
+
+language: "en-US"
+
+reviews:
+  # Auto-review all PRs
+  request_changes_workflow: true
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+
+  # What to catch
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+      - master
+
+  # Path filters — skip venv and cache
+  path_filters:
+    - "!.venv/**"
+    - "!__pycache__/**"
+    - "!*.pyc"
+    - "!.git/**"
+
+chat:
+  auto_reply: true
