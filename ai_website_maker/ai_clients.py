@@ -257,6 +257,9 @@ def claude_generate(prompt: str) -> Tuple[bool, str]:
             html = "\n".join(html.split("\n")[1:])
         if html.endswith("```"):
             html = "\n".join(html.split("\n")[:-1])
+            print( "\n")
+            print("The recieved HTML is ")
+            print(html)
         return (True, html) if html else (False, "Claude returned no text.")
     except Exception as exc:
         return False, f"Claude API call failed: {exc}"

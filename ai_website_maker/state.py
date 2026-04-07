@@ -4,6 +4,7 @@ from .data import DEFAULT_PRODUCTS, TEMPLATES
 def initialize_state() -> None:
     defaults = {
         "step": "frontend_wizard",
+        "frontend_question_step": 0,
         "website_use": "Business",
         "business_type": "",
         "owner_name": "",

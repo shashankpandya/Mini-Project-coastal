@@ -337,6 +337,98 @@ def apply_global_styles() -> None:
             color: #6b7180;
         }
         .step-label.active { color: #c4c4d8; }
+
+        /* Questionnaire flow card */
+        .question-shell {
+            max-width: 760px;
+            margin: 0 auto 1rem;
+            background: #12121c;
+            border: 1px solid #2a2a3d;
+            border-radius: 14px;
+            padding: 1.25rem 1.25rem 1.1rem;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+        }
+        .question-shell h3 {
+            margin: 0;
+            font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+            color: #e8e8f0;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        .question-kicker {
+            margin-bottom: 0.55rem;
+            color: #9090a8;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        /* Subtle fade-slide animation for one-question navigation */
+        .fade-slide {
+            animation: fade-slide-in 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        @keyframes fade-slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Summary cards */
+        .summary-grid {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-bottom: 1rem;
+        }
+        .summary-card {
+            background: #12121c;
+            border: 1px solid #2a2a3d;
+            border-radius: 12px;
+            padding: 0.85rem 0.95rem;
+        }
+        .summary-title {
+            color: #9090a8;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.35rem;
+            font-weight: 600;
+        }
+        .summary-value {
+            color: #e8e8f0;
+            font-size: 0.95rem;
+            line-height: 1.35;
+            word-break: break-word;
+        }
+
+        /* Clear disabled state for nav buttons */
+        .stButton > button:disabled {
+            opacity: 0.45 !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Responsive card layout for phones */
+        @media (max-width: 900px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .question-shell {
+                padding: 1rem 0.95rem;
+                margin-bottom: 0.85rem;
+            }
+            .block-container {
+                padding-left: 0.9rem;
+                padding-right: 0.9rem;
+            }
+        }
         </style>
         """,
         unsafe_allow_html=True,
